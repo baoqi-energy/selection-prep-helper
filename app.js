@@ -163,18 +163,61 @@ function handleMindmapFiles(files) {
     if (files.length === 0) return;
 
     const file = files[0];
-    const reader = new FileReader();
-
-    reader.onload = function(e) {
-        document.getElementById('mm-content-input').value = e.target.result;
-        document.querySelector('#mindmap-modal [data-tab="mm-paste"]').click();
-    };
 
     if (file.name.endsWith('.txt')) {
+        // 处理TXT文件
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('mm-content-input').value = e.target.result;
+            document.querySelector('#mindmap-modal [data-tab="mm-paste"]').click();
+        };
         reader.readAsText(file, 'UTF-8');
+
+    } else if (file.name.endsWith('.pdf')) {
+        // 处理PDF文件
+        parsePDFFile(file);
+
     } else {
-        alert('⚠️ 暂不支持 ' + file.name + ' 的格式。请上传 .txt 文件，或手动复制粘贴内容。');
+        alert('⚠️ 暂不支持 ' + file.name + ' 的格式。请上传 .txt 或 .pdf 文件。');
     }
+}
+
+function parsePDFFile(file) {
+    const fileReader = new FileReader();
+
+    fileReader.onload = function() {
+        const typedarray = new Uint8Array(this.result);
+
+        // 使用 pdf.js 解析 PDF
+        pdfjsLib.getDocument(typedarray).promise.then(function(pdf) {
+            let totalText = '';
+            let pagePromises = [];
+
+            for (let i = 1; i <= pdf.numPages; i++) {
+                pagePromises.push(
+                    pdf.getPage(i).then(function(page) {
+                        return page.getTextContent().then(function(textContent) {
+                            return textContent.items.map(item => item.str).join(' ');
+                        });
+                    })
+                );
+            }
+
+            Promise.all(pagePromises).then(function(pagesText) {
+                totalText = pagesText.join('\n\n');
+
+                document.getElementById('mm-content-input').value = totalText;
+                document.querySelector('#mindmap-modal [data-tab="mm-paste"]').click();
+
+                alert('✅ PDF解析成功！共 ' + pdf.numPages + ' 页');
+            });
+
+        }).catch(function(error) {
+            alert('❌ PDF解析失败：' + error.message);
+        });
+    };
+
+    fileReader.readAsArrayBuffer(file);
 }
 
 function initMindmapButtons() {
