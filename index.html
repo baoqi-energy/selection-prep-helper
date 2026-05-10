@@ -3,90 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>瀹濆瓙鐨勫鑰冨姪鎵?鈥?閬撮€夊ぇ绁炲吇鎴愯鍒?/title>
+    <title>宝子的备考助手 — 遴选大神养成计划</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <!-- 椤堕儴鏍囬鏍?-->
+        <!-- 顶部标题栏 -->
         <header>
             <div class="header-content">
                 <div class="logo-area">
                     <span class="logo-icon"><i class="fas fa-book"></i></span>
-                    <h1>瀹濆瓙鐨勫鑰冨姪鎵?/h1>
-                    <span class="subtitle">閬撮€夊ぇ绁炲吇鎴愯鍒?/span>
+                    <h1>宝子的备考助手</h1>
+                    <span class="subtitle">遴选大神养成计划</span>
                 </div>
                 <div class="header-actions">
-                    <button class="btn-icon" id="theme-toggle" title="鍒囨崲涓婚"><i class="fas fa-adjust"></i></button>
-                    <button class="btn-icon" id="help-btn" title="浣跨敤甯姪"><i class="fas fa-question"></i></button>
+                    <button class="btn-icon" id="theme-toggle" title="切换主题"><i class="fas fa-adjust"></i></button>
+                    <button class="btn-icon" id="help-btn" title="使用帮助"><i class="fas fa-question"></i></button>
                 </div>
             </div>
 
-            <!-- 瀵艰埅鏍?-->
+            <!-- 导航栏 -->
             <nav class="main-nav">
                 <button class="nav-btn active" data-module="mindmap">
-                    <i class="fas fa-sitemap"></i> 鎬濈淮瀵煎浘
+                    <i class="fas fa-sitemap"></i> 思维导图
                 </button>
                 <button class="nav-btn" data-module="essays">
-                    <i class="fas fa-file-alt"></i> 鑼冩枃搴?                </button>
+                    <i class="fas fa-file-alt"></i> 范文库
+                </button>
                 <button class="nav-btn" data-module="policy">
-                    <i class="fas fa-file-pdf"></i> 鏀跨瓥鏂囦欢
+                    <i class="fas fa-file-pdf"></i> 政策文件
                 </button>
                 <button class="nav-btn" data-module="todo">
-                    <i class="fas fa-check-square"></i> 寰呭姙娓呭崟
+                    <i class="fas fa-check-square"></i> 待办清单
                 </button>
             </nav>
         </header>
 
-        <!-- 涓诲唴瀹瑰尯 -->
+        <!-- 主内容区 -->
         <main>
-            <!-- ==================== 妯″潡1锛氭€濈淮瀵煎浘 ==================== -->
+            <!-- ==================== 模块1：思维导图 ==================== -->
             <section id="mindmap-module" class="module active">
                 <div class="module-header">
-                    <h2>鈼?鍏枃鎬濈淮瀵煎浘</h2>
+                    <h2>○ 公文思维导图</h2>
                     <div class="module-actions">
                         <div class="search-box">
                             <i class="fas fa-search"></i>
-                            <input type="text" id="mindmap-search" placeholder="鎼滅储鎬濈淮瀵煎浘...">
+                            <input type="text" id="mindmap-search" placeholder="搜索思维导图...">
                         </div>
                         <button class="btn-secondary" id="new-mindmap-btn">
-                            <i class="fas fa-plus"></i> 鏂板缓
+                            <i class="fas fa-plus"></i> 新建
                         </button>
                     </div>
                 </div>
 
-                <!-- 鎬濈淮瀵煎浘鍒楄〃 -->
+                <!-- 思维导图列表 -->
                 <div class="mindmap-list" id="mindmap-list">
                     <div class="empty-state">
-                        <span class="empty-icon">馃摥</span>
-                        <p>杩樻病鏈夋€濈淮瀵煎浘</p>
-                        <p class="hint">鐐瑰嚮銆屾柊寤恒€嶅紑濮嬪垱寤?/p>
+                        <span class="empty-icon">📭</span>
+                        <p>还没有思维导图</p>
+                        <p class="hint">点击「新建」开始创建</p>
                     </div>
                 </div>
 
-                <!-- 鎬濈淮瀵煎浘鏌ョ湅鍣紙闅愯棌锛?-->
+                <!-- 思维导图查看器（隐藏） -->
                 <div class="mindmap-viewer" id="mindmap-viewer" style="display:none;">
                     <div class="viewer-header">
                         <button class="btn-back" id="back-to-list">
-                            <i class="fas fa-arrow-left"></i> 杩斿洖鍒楄〃
+                            <i class="fas fa-arrow-left"></i> 返回列表
                         </button>
-                        <h3 id="viewer-title">鎬濈淮瀵煎浘鏍囬</h3>
+                        <h3 id="viewer-title">思维导图标题</h3>
                         <div class="viewer-actions">
-                            <button class="btn-icon" id="expand-all-btn" title="灞曞紑鍏ㄩ儴">鈯?/button>
-                            <button class="btn-icon" id="collapse-all-btn" title="鎶樺彔鍏ㄩ儴">鈯?/button>
-                            <button class="btn-icon" id="export-mindmap-btn" title="瀵煎嚭JSON">馃摛</button>
-                            <button class="btn-icon" id="delete-mindmap-btn" title="鍒犻櫎">馃棏锔?/button>
+                            <button class="btn-icon" id="expand-all-btn" title="展开全部">⊞</button>
+                            <button class="btn-icon" id="collapse-all-btn" title="折叠全部">⊟</button>
+                            <button class="btn-icon" id="export-mindmap-btn" title="导出JSON">📤</button>
+                            <button class="btn-icon" id="delete-mindmap-btn" title="删除">🗑️</button>
                         </div>
                     </div>
                     <div class="mindmap-container" id="mindmap-display"></div>
                 </div>
 
-                <!-- 鏂板缓/缂栬緫鎬濈淮瀵煎浘妯℃€佹 -->
+                <!-- 新建/编辑思维导图模态框 -->
                 <div class="modal" id="mindmap-modal" style="display:none;">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h3>鈻?鏂板缓鎬濈淮瀵煎浘</h3>
+                            <h3>□ 新建思维导图</h3>
                             <button class="btn-close" id="close-mindmap-modal">&times;</button>
                         </div>
                         <div class="modal-body">
@@ -98,63 +99,67 @@
                                 <span class="step-dot">3</span>
                             </div>
 
-                            <!-- 姝ラ1锛氳緭鍏ュ唴瀹?-->
+                            <!-- 步骤1：输入内容 -->
                             <div class="step-content active" id="mm-step1">
-                                <h4>鈼?绗竴姝ワ細杈撳叆鍐呭</h4>
+                                <h4>● 第一步：输入内容</h4>
                                 <div class="input-tabs">
-                                    <button class="tab-btn active" data-tab="mm-paste">绮樿创鏂囨湰</button>
-                                    <button class="tab-btn" data-tab="mm-upload">涓婁紶鏂囦欢</button>
+                                    <button class="tab-btn active" data-tab="mm-paste">粘贴文本</button>
+                                    <button class="tab-btn" data-tab="mm-upload">上传文件</button>
                                 </div>
                                 <div class="tab-content active" id="mm-paste-tab">
-                                    <textarea id="mm-content-input" placeholder="璇风矘璐磋涔夊唴瀹?..
+                                    <textarea id="mm-content-input" placeholder="请粘贴讲义内容...
 
-绀轰緥鏍煎紡锛?閫氱煡
-涓€銆侀€傜敤鍦烘櫙
-閫傜敤浜庡彂甯冦€佷紶杈捐姹備笅绾ф満鍏虫墽琛岀殑浜嬮」...
-浜屻€佺粨鏋勬鏋?鏍囬 + 涓婚€佹満鍏?+ 姝ｆ枃 + 钀芥...
-涓夈€佸啓浣滆鐐?..."></textarea>
+示例格式：
+通知
+一、适用场景
+适用于发布、传达要求下级机关执行的事项...
+二、结构框架
+标题 + 主送机关 + 正文 + 落款...
+三、写作要点
+..."></textarea>
                                 </div>
                                 <div class="tab-content" id="mm-upload-tab">
                                     <div class="upload-area" id="mm-file-drop-area">
                                         <i class="fas fa-cloud-upload-alt upload-icon"></i>
-                                        <p>鎷栨嫿鏂囦欢鍒版澶勶紝鎴?/p>
+                                        <p>拖拽文件到此处，或</p>
                                         <input type="file" id="mm-file-input" accept=".txt,.docx,.pdf" multiple>
-                                        <label for="mm-file-input" class="upload-btn">閫夋嫨鏂囦欢</label>
-                                        <p class="upload-hint">鏀寔 .txt, .docx, .pdf 鏍煎紡</p>
+                                        <label for="mm-file-input" class="upload-btn">选择文件</label>
+                                        <p class="upload-hint">支持 .txt, .docx, .pdf 格式</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- 姝ラ2锛氱敓鎴愭彁绀鸿瘝 -->
+                            <!-- 步骤2：生成提示词 -->
                             <div class="step-content" id="mm-step2">
-                                <h4>鈼?绗簩姝ワ細鑾峰彇AI鍒嗘瀽缁撴灉</h4>
+                                <h4>● 第二步：获取AI分析结果</h4>
                                 <div class="prompt-area">
-                                    <label>鈼?澶嶅埗浠ヤ笅鎻愮ず璇嶏紝鍙戦€佺粰AI鍒嗘瀽锛?/label>
+                                    <label>○ 复制以下提示词，发送给AI分析：</label>
                                     <textarea id="mm-prompt-output" readonly></textarea>
                                     <button class="btn-primary" id="mm-copy-prompt-btn">
-                                        <i class="fas fa-copy"></i> 澶嶅埗鎻愮ず璇?                                    </button>
+                                        <i class="fas fa-copy"></i> 复制提示词
+                                    </button>
                                 </div>
                                 <div class="ai-response-area">
-                                    <label>鈼?灏咥I杩斿洖鐨勭粨鏋勫寲鏁版嵁绮樿创鍒版澶勶細</label>
-                                    <textarea id="mm-ai-response-input" placeholder="AI浼氳繑鍥濲SON鏍煎紡鐨勬€濈淮瀵煎浘鏁版嵁锛岃绮樿创鍒拌繖閲?.."></textarea>
+                                    <label>○ 将AI返回的结构化数据粘贴到此处：</label>
+                                    <textarea id="mm-ai-response-input" placeholder="AI会返回JSON格式的思维导图数据，请粘贴到这里..."></textarea>
                                     <button class="btn-primary" id="mm-load-mindmap-btn">
-                                        <i class="fas fa-upload"></i> 鍔犺浇鎬濈淮瀵煎浘
+                                        <i class="fas fa-upload"></i> 加载思维导图
                                     </button>
                                 </div>
                             </div>
 
-                            <!-- 姝ラ3锛氶瑙堜繚瀛?-->
+                            <!-- 步骤3：预览保存 -->
                             <div class="step-content" id="mm-step3">
-                                <h4>鈼?绗笁姝ワ細棰勮骞朵繚瀛?/h4>
+                                <h4>● 第三步：预览并保存</h4>
                                 <div class="preview-area">
-                                    <p>鎬濈淮瀵煎浘棰勮锛堢畝鍖栫増锛夛細</p>
+                                    <p>思维导图预览（简化版）：</p>
                                     <div id="mm-preview"></div>
                                 </div>
                                 <div class="save-area">
-                                    <label>鈼?杈撳叆鎬濈淮瀵煎浘鍚嶇О锛?/label>
-                                    <input type="text" id="mm-name-input" placeholder="渚嬪锛氬叕鏂囧啓浣滄€濈淮瀵煎浘">
+                                    <label>○ 输入思维导图名称：</label>
+                                    <input type="text" id="mm-name-input" placeholder="例如：公文写作思维导图">
                                     <button class="btn-primary" id="mm-save-btn">
-                                        <i class="fas fa-save"></i> 淇濆瓨鎬濈淮瀵煎浘
+                                        <i class="fas fa-save"></i> 保存思维导图
                                     </button>
                                 </div>
                             </div>
@@ -163,275 +168,276 @@
                 </div>
             </section>
 
-            <!-- ==================== 妯″潡2锛氳寖鏂囧簱 ==================== -->
+            <!-- ==================== 模块2：范文库 ==================== -->
             <section id="essays-module" class="module">
                 <div class="module-header">
-                    <h2>鈼?鑼冩枃搴?/h2>
+                    <h2>○ 范文库</h2>
                     <div class="module-actions">
                         <div class="search-box">
                             <i class="fas fa-search"></i>
-                            <input type="text" id="essay-search" placeholder="鎼滅储鑼冩枃...">
+                            <input type="text" id="essay-search" placeholder="搜索范文...">
                         </div>
                         <select id="essay-category-filter">
-                            <option value="all">鍏ㄩ儴鍒嗙被</option>
-                            <option value="閫氱煡">閫氱煡</option>
-                            <option value="鎶ュ憡">鎶ュ憡</option>
-                            <option value="璇风ず">璇风ず</option>
-                            <option value="鎵瑰">鎵瑰</option>
-                            <option value="鍑?>鍑?/option>
-                            <option value="绾">绾</option>
-                            <option value="璁茶瘽绋?>璁茶瘽绋?/option>
-                            <option value="璋冪爺鎶ュ憡">璋冪爺鎶ュ憡</option>
+                            <option value="all">全部分类</option>
+                            <option value="通知">通知</option>
+                            <option value="报告">报告</option>
+                            <option value="请示">请示</option>
+                            <option value="批复">批复</option>
+                            <option value="函">函</option>
+                            <option value="纪要">纪要</option>
+                            <option value="讲话稿">讲话稿</option>
+                            <option value="调研报告">调研报告</option>
                         </select>
                         <button class="btn-secondary" id="upload-essay-btn">
-                            <i class="fas fa-plus"></i> 涓婁紶鑼冩枃
+                            <i class="fas fa-plus"></i> 上传范文
                         </button>
                     </div>
                 </div>
 
                 <div class="essay-list" id="essay-list">
                     <div class="empty-state">
-                        <span class="empty-icon">馃搫</span>
-                        <p>杩樻病鏈夎寖鏂?/p>
-                        <p class="hint">鐐瑰嚮銆屼笂浼犺寖鏂囥€嶅紑濮嬫坊鍔?/p>
+                        <span class="empty-icon">📄</span>
+                        <p>还没有范文</p>
+                        <p class="hint">点击「上传范文」开始添加</p>
                     </div>
                 </div>
 
-                <!-- 涓婁紶鑼冩枃妯℃€佹 -->
+                <!-- 上传范文模态框 -->
                 <div class="modal" id="essay-modal" style="display:none;">
                     <div class="modal-content modal-large">
                         <div class="modal-header">
-                            <h3>鈻?涓婁紶鑼冩枃</h3>
+                            <h3>□ 上传范文</h3>
                             <button class="btn-close" id="close-essay-modal">&times;</button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label>鈼?鑼冩枃鏍囬锛?/label>
-                                <input type="text" id="essay-title-input" placeholder="渚嬪锛氬叧浜庡姞寮哄競鍦虹洃绠″伐浣滅殑閫氱煡">
+                                <label>○ 范文标题：</label>
+                                <input type="text" id="essay-title-input" placeholder="例如：关于加强市场监管工作的通知">
                             </div>
                             <div class="form-group">
-                                <label>鈼?鍏枃绫诲瀷锛?/label>
+                                <label>○ 公文类型：</label>
                                 <select id="essay-type-input">
-                                    <option value="閫氱煡">閫氱煡</option>
-                                    <option value="鎶ュ憡">鎶ュ憡</option>
-                                    <option value="璇风ず">璇风ず</option>
-                                    <option value="鎵瑰">鎵瑰</option>
-                                    <option value="鍑?>鍑?/option>
-                                    <option value="绾">绾</option>
-                                    <option value="璁茶瘽绋?>璁茶瘽绋?/option>
-                                    <option value="璋冪爺鎶ュ憡">璋冪爺鎶ュ憡</option>
+                                    <option value="通知">通知</option>
+                                    <option value="报告">报告</option>
+                                    <option value="请示">请示</option>
+                                    <option value="批复">批复</option>
+                                    <option value="函">函</option>
+                                    <option value="纪要">纪要</option>
+                                    <option value="讲话稿">讲话稿</option>
+                                    <option value="调研报告">调研报告</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>鈼?鑼冩枃鍐呭锛?/label>
-                                <textarea id="essay-content-input" placeholder="绮樿创鑼冩枃鍐呭..."></textarea>
+                                <label>○ 范文内容：</label>
+                                <textarea id="essay-content-input" placeholder="粘贴范文内容..."></textarea>
                             </div>
                             <div class="form-group">
-                                <label>鈼?鍏抽敭璇嶏紙鐢ㄩ€楀彿鍒嗛殧锛夛細</label>
-                                <input type="text" id="essay-keywords-input" placeholder="渚嬪锛氬競鍦虹洃绠?椋熷搧瀹夊叏,琛屾斂鎵ф硶">
+                                <label>○ 关键词（用逗号分隔）：</label>
+                                <input type="text" id="essay-keywords-input" placeholder="例如：市场监管,食品安全,行政执法">
                             </div>
                             <div class="button-group">
                                 <button class="btn-secondary" id="essay-ai-analyze-btn">
-                                    <i class="fas fa-robot"></i> AI鍒嗘瀽鎻愮偧
+                                    <i class="fas fa-robot"></i> AI分析提炼
                                 </button>
                                 <button class="btn-primary" id="essay-save-btn">
-                                    <i class="fas fa-save"></i> 淇濆瓨鑼冩枃
+                                    <i class="fas fa-save"></i> 保存范文
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 鑼冩枃鏌ョ湅鍣?-->
+                <!-- 范文查看器 -->
                 <div class="essay-viewer" id="essay-viewer" style="display:none;">
                     <div class="viewer-header">
                         <button class="btn-back" id="back-to-essay-list">
-                            <i class="fas fa-arrow-left"></i> 杩斿洖鍒楄〃
+                            <i class="fas fa-arrow-left"></i> 返回列表
                         </button>
-                        <h3 id="essay-viewer-title">鑼冩枃鏍囬</h3>
+                        <h3 id="essay-viewer-title">范文标题</h3>
                         <div class="viewer-actions">
-                            <button class="btn-icon" id="essay-highlight-btn" title="楂樹寒鍏抽敭璇?>馃枍锔?/button>
-                            <button class="btn-icon" id="essay-delete-btn" title="鍒犻櫎">馃棏锔?/button>
+                            <button class="btn-icon" id="essay-highlight-btn" title="高亮关键词">🖍️</button>
+                            <button class="btn-icon" id="essay-delete-btn" title="删除">🗑️</button>
                         </div>
                     </div>
                     <div class="essay-content" id="essay-viewer-content"></div>
                 </div>
             </section>
 
-            <!-- ==================== 妯″潡3锛氭斂绛栨枃浠?==================== -->
+            <!-- ==================== 模块3：政策文件 ==================== -->
             <section id="policy-module" class="module">
                 <div class="module-header">
-                    <h2>鈼?鏀跨瓥鏂囦欢</h2>
+                    <h2>○ 政策文件</h2>
                     <div class="module-actions">
                         <div class="search-box">
                             <i class="fas fa-search"></i>
-                            <input type="text" id="policy-search" placeholder="鎼滅储鏀跨瓥鏂囦欢...">
+                            <input type="text" id="policy-search" placeholder="搜索政策文件...">
                         </div>
                         <button class="btn-secondary" id="upload-policy-btn">
-                            <i class="fas fa-plus"></i> 涓婁紶鏀跨瓥
+                            <i class="fas fa-plus"></i> 上传政策
                         </button>
                     </div>
                 </div>
 
                 <div class="policy-list" id="policy-list">
                     <div class="empty-state">
-                        <span class="empty-icon">馃搼</span>
-                        <p>杩樻病鏈夋斂绛栨枃浠?/p>
-                        <p class="hint">鐐瑰嚮銆屼笂浼犳斂绛栥€嶅紑濮嬫坊鍔?/p>
+                        <span class="empty-icon">📑</span>
+                        <p>还没有政策文件</p>
+                        <p class="hint">点击「上传政策」开始添加</p>
                     </div>
                 </div>
 
-                <!-- 涓婁紶鏀跨瓥妯℃€佹 -->
+                <!-- 上传政策模态框 -->
                 <div class="modal" id="policy-modal" style="display:none;">
                     <div class="modal-content modal-large">
                         <div class="modal-header">
-                            <h3>鈻?涓婁紶鏀跨瓥鏂囦欢</h3>
+                            <h3>□ 上传政策文件</h3>
                             <button class="btn-close" id="close-policy-modal">&times;</button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label>鈼?鏀跨瓥鏍囬锛?/label>
-                                <input type="text" id="policy-title-input" placeholder="渚嬪锛?026骞存斂搴滃伐浣滄姤鍛?>
+                                <label>○ 政策标题：</label>
+                                <input type="text" id="policy-title-input" placeholder="例如：2026年政府工作报告">
                             </div>
                             <div class="form-group">
-                                <label>鈼?鏀跨瓥鍘熸枃锛?/label>
-                                <textarea id="policy-content-input" placeholder="绮樿创鏀跨瓥鍘熸枃..."></textarea>
+                                <label>○ 政策原文：</label>
+                                <textarea id="policy-content-input" placeholder="粘贴政策原文..."></textarea>
                             </div>
                             <div class="button-group">
                                 <button class="btn-secondary" id="policy-generate-btn">
-                                    <i class="fas fa-magic"></i> 鐢熸垚澶氱増鏈?                                </button>
+                                    <i class="fas fa-magic"></i> 生成多版本
+                                </button>
                             </div>
 
-                            <!-- 鐢熸垚鐨勭増鏈?-->
+                            <!-- 生成的版本 -->
                             <div class="policy-versions" id="policy-versions" style="display:none;">
                                 <div class="version-tabs">
-                                    <button class="version-tab active" data-version="highlighted">閲嶇偣鏍囨敞鐗?/button>
-                                    <button class="version-tab" data-version="summary">鎽樿鐗?/button>
-                                    <button class="version-tab" data-version="cloze">鎸栫┖鐗?/button>
+                                    <button class="version-tab active" data-version="highlighted">重点标注版</button>
+                                    <button class="version-tab" data-version="summary">摘要版</button>
+                                    <button class="version-tab" data-version="cloze">挖空版</button>
                                 </div>
                                 <div class="version-content" id="version-content"></div>
                             </div>
 
                             <div class="form-group" style="margin-top:20px;">
                                 <button class="btn-primary" id="policy-save-btn">
-                                    <i class="fas fa-save"></i> 淇濆瓨鏀跨瓥鏂囦欢
+                                    <i class="fas fa-save"></i> 保存政策文件
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 鏀跨瓥鏌ョ湅鍣?-->
+                <!-- 政策查看器 -->
                 <div class="policy-viewer" id="policy-viewer" style="display:none;">
                     <div class="viewer-header">
                         <button class="btn-back" id="back-to-policy-list">
-                            <i class="fas fa-arrow-left"></i> 杩斿洖鍒楄〃
+                            <i class="fas fa-arrow-left"></i> 返回列表
                         </button>
-                        <h3 id="policy-viewer-title">鏀跨瓥鏍囬</h3>
+                        <h3 id="policy-viewer-title">政策标题</h3>
                         <div class="viewer-actions">
-                            <button class="btn-icon" id="policy-version-btn" title="鍒囨崲鐗堟湰">馃搫</button>
-                            <button class="btn-icon" id="policy-delete-btn" title="鍒犻櫎">馃棏锔?/button>
+                            <button class="btn-icon" id="policy-version-btn" title="切换版本">📄</button>
+                            <button class="btn-icon" id="policy-delete-btn" title="删除">🗑️</button>
                         </div>
                     </div>
                     <div class="policy-content" id="policy-viewer-content"></div>
                 </div>
             </section>
 
-            <!-- ==================== 妯″潡4锛氬緟鍔炴竻鍗?==================== -->
+            <!-- ==================== 模块4：待办清单 ==================== -->
             <section id="todo-module" class="module">
                 <div class="module-header">
-                    <h2>鈼?寰呭姙娓呭崟</h2>
+                    <h2>○ 待办清单</h2>
                     <div class="module-actions">
                         <button class="btn-secondary" id="add-todo-btn">
-                            <i class="fas fa-plus"></i> 娣诲姞寰呭姙
+                            <i class="fas fa-plus"></i> 添加待办
                         </button>
                     </div>
                 </div>
 
                 <div class="todo-container">
                     <div class="todo-input-area">
-                        <input type="text" id="todo-input" placeholder="娣诲姞鏂颁换鍔?..">
+                        <input type="text" id="todo-input" placeholder="添加新任务...">
                         <select id="todo-priority">
-                            <option value="low">浣庝紭鍏堢骇</option>
-                            <option value="medium" selected>涓紭鍏堢骇</option>
-                            <option value="high">楂樹紭鍏堢骇</option>
+                            <option value="low">低优先级</option>
+                            <option value="medium" selected>中优先级</option>
+                            <option value="high">高优先级</option>
                         </select>
-                        <button class="btn-primary" id="todo-add-btn">娣诲姞</button>
+                        <button class="btn-primary" id="todo-add-btn">添加</button>
                     </div>
 
                     <div class="todo-filters">
-                        <button class="filter-btn active" data-filter="all">鍏ㄩ儴</button>
-                        <button class="filter-btn" data-filter="pending">寰呭畬鎴?/button>
-                        <button class="filter-btn" data-filter="completed">宸插畬鎴?/button>
+                        <button class="filter-btn active" data-filter="all">全部</button>
+                        <button class="filter-btn" data-filter="pending">待完成</button>
+                        <button class="filter-btn" data-filter="completed">已完成</button>
                     </div>
 
                     <div class="todo-list" id="todo-list">
                         <div class="empty-state">
-                            <span class="empty-icon">鉁?/span>
-                            <p>杩樻病鏈夊緟鍔炰簨椤?/p>
-                            <p class="hint">娣诲姞浣犵殑绗竴涓换鍔″惂锛?/p>
+                            <span class="empty-icon">✅</span>
+                            <p>还没有待办事项</p>
+                            <p class="hint">添加你的第一个任务吧！</p>
                         </div>
                     </div>
 
                     <div class="todo-stats">
-                        <span id="todo-stats-text">0 涓换鍔★紝0 涓凡瀹屾垚</span>
-                        <button class="btn-secondary" id="clear-completed-btn">娓呴櫎宸插畬鎴?/button>
+                        <span id="todo-stats-text">0 个任务，0 个已完成</span>
+                        <button class="btn-secondary" id="clear-completed-btn">清除已完成</button>
                     </div>
                 </div>
             </section>
         </main>
 
-        <!-- 搴曢儴 -->
+        <!-- 底部 -->
         <footer>
-            <p>馃挭 瀹濆瓙鍔犳补锛侀伌閫夊ぇ绁炲氨鏄綘鍟</p>
-            <p class="footer-hint">馃挕 鎻愮ず锛氭墍鏈夋暟鎹繚瀛樺湪鏈湴娴忚鍣ㄤ腑锛屼笉浼氫笂浼犲埌鏈嶅姟鍣?/p>
+            <p>💪 宝子加油！遴选大神就是你啦~</p>
+            <p class="footer-hint">💡 提示：所有数据保存在本地浏览器中，不会上传到服务器</p>
             <div class="data-management">
                 <button class="btn-secondary btn-small" id="export-data-btn">
-                    <i class="fas fa-download"></i> 瀵煎嚭鏁版嵁
+                    <i class="fas fa-download"></i> 导出数据
                 </button>
                 <button class="btn-secondary btn-small" id="import-data-btn">
-                    <i class="fas fa-upload"></i> 瀵煎叆鏁版嵁
+                    <i class="fas fa-upload"></i> 导入数据
                 </button>
                 <button class="btn-secondary btn-small btn-danger" id="clear-data-btn">
-                    <i class="fas fa-trash"></i> 娓呯┖鏁版嵁
+                    <i class="fas fa-trash"></i> 清空数据
                 </button>
                 <input type="file" id="import-file-input" accept=".json" style="display:none;">
             </div>
         </footer>
     </div>
 
-    <!-- 甯姪妯℃€佹 -->
+    <!-- 帮助模态框 -->
     <div class="modal" id="help-modal" style="display:none;">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>鈻?浣跨敤甯姪</h3>
+                <h3>□ 使用帮助</h3>
                 <button class="btn-close" id="close-help-modal">&times;</button>
             </div>
             <div class="modal-body">
-                <h4>鈼?鎬濈淮瀵煎浘妯″潡锛?/h4>
-                <p>1. 鐐瑰嚮銆屾柊寤恒€嶅垱寤烘€濈淮瀵煎浘</p>
-                <p>2. 绮樿创璁蹭箟鍐呭鎴栦笂浼犳枃浠?/p>
-                <p>3. 澶嶅埗鎻愮ず璇嶅彂缁橝I鍒嗘瀽</p>
-                <p>4. 灏咥I杩斿洖鐨凧SON绮樿创鍥炴潵</p>
-                <p>5. 淇濆瓨骞舵煡鐪嬫€濈淮瀵煎浘</p>
+                <h4>● 思维导图模块：</h4>
+                <p>1. 点击「新建」创建思维导图</p>
+                <p>2. 粘贴讲义内容或上传文件</p>
+                <p>3. 复制提示词发给AI分析</p>
+                <p>4. 将AI返回的JSON粘贴回来</p>
+                <p>5. 保存并查看思维导图</p>
 
-                <h4>鈼?鑼冩枃搴撴ā鍧楋細</h4>
-                <p>1. 鐐瑰嚮銆屼笂浼犺寖鏂囥€嶆坊鍔犺寖鏂?/p>
-                <p>2. 濉啓鏍囬銆佺被鍨嬨€佸唴瀹广€佸叧閿瘝</p>
-                <p>3. 鍙偣鍑汇€孉I鍒嗘瀽鎻愮偧銆嶈嚜鍔ㄦ彁鍙栭噸鐐?/p>
-                <p>4. 淇濆瓨鍚庡彲鎼滅储鍜岄珮浜叧閿瘝</p>
+                <h4>● 范文库模块：</h4>
+                <p>1. 点击「上传范文」添加范文</p>
+                <p>2. 填写标题、类型、内容、关键词</p>
+                <p>3. 可点击「AI分析提炼」自动提取重点</p>
+                <p>4. 保存后可搜索和高亮关键词</p>
 
-                <h4>鈼?鏀跨瓥鏂囦欢妯″潡锛?/h4>
-                <p>1. 鐐瑰嚮銆屼笂浼犳斂绛栥€嶆坊鍔犳斂绛栨枃浠?/p>
-                <p>2. 绮樿创鏀跨瓥鍘熸枃</p>
-                <p>3. 鐐瑰嚮銆岀敓鎴愬鐗堟湰銆嶇敓鎴愰噸鐐规爣娉ㄧ増/鎽樿鐗?鎸栫┖鐗?/p>
-                <p>4. 淇濆瓨鍚庡彲鍒囨崲涓嶅悓鐗堟湰鏌ョ湅</p>
+                <h4>● 政策文件模块：</h4>
+                <p>1. 点击「上传政策」添加政策文件</p>
+                <p>2. 粘贴政策原文</p>
+                <p>3. 点击「生成多版本」生成重点标注版/摘要版/挖空版</p>
+                <p>4. 保存后可切换不同版本查看</p>
 
-                <h4>鈼?寰呭姙娓呭崟妯″潡锛?/h4>
-                <p>1. 杈撳叆浠诲姟鍐呭锛岄€夋嫨浼樺厛绾?/p>
-                <p>2. 鐐瑰嚮銆屾坊鍔犮€嶅垱寤轰换鍔?/p>
-                <p>3. 鐐瑰嚮浠诲姟鍓嶇殑鏂规鏍囪瀹屾垚</p>
-                <p>4. 浣跨敤绛涢€夋寜閽煡鐪嬩笉鍚岀姸鎬佺殑浠诲姟</p>
+                <h4>● 待办清单模块：</h4>
+                <p>1. 输入任务内容，选择优先级</p>
+                <p>2. 点击「添加」创建任务</p>
+                <p>3. 点击任务前的方框标记完成</p>
+                <p>4. 使用筛选按钮查看不同状态的任务</p>
             </div>
         </div>
     </div>
