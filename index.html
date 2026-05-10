@@ -130,22 +130,47 @@
                                 </div>
                             </div>
 
-                            <!-- 步骤2：生成提示词 -->
+                            <!-- 步骤2：获取AI分析结果 -->
                             <div class="step-content" id="mm-step2">
                                 <h4>● 第二步：获取AI分析结果</h4>
-                                <div class="prompt-area">
-                                    <label>○ 复制以下提示词，发送给AI分析：</label>
-                                    <textarea id="mm-prompt-output" readonly></textarea>
-                                    <button class="btn-primary" id="mm-copy-prompt-btn">
-                                        <i class="fas fa-copy"></i> 复制提示词
-                                    </button>
+
+                                <!-- 第1步：复制提示词 -->
+                                <div class="step2-section">
+                                    <div class="step2-label">
+                                        <span class="step2-badge">①</span>
+                                        <label>复制左侧提示词，发送给AI：</label>
+                                    </div>
+                                    <div class="prompt-area">
+                                        <textarea id="mm-prompt-output" readonly></textarea>
+                                        <button class="btn-primary" id="mm-copy-prompt-btn">
+                                            <i class="fas fa-copy"></i> 复制提示词
+                                        </button>
+                                    </div>
+                                    <div class="step2-hint">
+                                        <i class="fas fa-lightbulb"></i>
+                                        提示词已自动复制！请粘贴到AI对话框，AI会返回JSON格式数据
+                                    </div>
                                 </div>
-                                <div class="ai-response-area">
-                                    <label>○ 将AI返回的结构化数据粘贴到此处：</label>
-                                    <textarea id="mm-ai-response-input" placeholder="AI会返回JSON格式的思维导图数据，请粘贴到这里..."></textarea>
-                                    <button class="btn-primary" id="mm-load-mindmap-btn">
-                                        <i class="fas fa-upload"></i> 加载思维导图
-                                    </button>
+
+                                <!-- 分隔箭头 -->
+                                <div class="step2-arrow">
+                                    <i class="fas fa-arrow-down"></i>
+                                    <span>等待AI分析完成</span>
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+
+                                <!-- 第2步：粘贴AI返回的JSON -->
+                                <div class="step2-section">
+                                    <div class="step2-label">
+                                        <span class="step2-badge">②</span>
+                                        <label>将AI返回的JSON数据粘贴到此处：</label>
+                                    </div>
+                                    <div class="ai-response-area">
+                                        <textarea id="mm-ai-response-input" placeholder="请在此粘贴AI返回的JSON数据...&#10;&#10;正确格式示例：&#10;{&#10;  &quot;name&quot;: &quot;公文写作&quot;,&#10;  &quot;children&quot;: [...]&#10;}"></textarea>
+                                        <button class="btn-primary" id="mm-load-mindmap-btn">
+                                            <i class="fas fa-upload"></i> 加载思维导图
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 
