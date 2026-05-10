@@ -278,7 +278,14 @@ ${content}
 
     // 自动复制提示词到剪贴板
     navigator.clipboard.writeText(prompt).then(() => {
-        alert('✅ 提示词已自动生成，并复制到剪贴板！\n\n请直接粘贴到AI对话框进行分析。');
+        // 视觉反馈：高亮提示区域
+        const hint = document.querySelector('.step2-hint');
+        if (hint) {
+            hint.style.background = 'linear-gradient(135deg, var(--mint-pale), var(--sky-pale))';
+            hint.style.borderColor = 'var(--mint-green)';
+            hint.innerHTML = '<i class="fas fa-check-circle"></i> ✅ 提示词已自动复制到剪贴板！请粘贴到AI对话框，等待AI返回JSON结果后再进行下一步。';
+        }
+        alert('✅ 提示词已自动复制！\n\n请直接粘贴到AI对话框进行分析。');
     }).catch(() => {
         // 如果clipboard API失败，使用传统方法
         const textArea = document.createElement('textarea');
@@ -287,7 +294,14 @@ ${content}
         textArea.select();
         document.execCommand('copy');
         document.body.removeChild(textArea);
-        alert('✅ 提示词已自动生成，并复制到剪贴板！\n\n请直接粘贴到AI对话框进行分析。');
+
+        const hint = document.querySelector('.step2-hint');
+        if (hint) {
+            hint.style.background = 'linear-gradient(135deg, var(--mint-pale), var(--sky-pale))';
+            hint.style.borderColor = 'var(--mint-green)';
+            hint.innerHTML = '<i class="fas fa-check-circle"></i> ✅ 提示词已自动复制到剪贴板！请粘贴到AI对话框，等待AI返回JSON结果后再进行下一步。';
+        }
+        alert('✅ 提示词已自动复制！\n\n请直接粘贴到AI对话框进行分析。');
     });
 }
 
