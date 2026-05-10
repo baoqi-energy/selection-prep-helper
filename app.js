@@ -209,7 +209,10 @@ function parsePDFFile(file) {
                 document.getElementById('mm-content-input').value = totalText;
                 document.querySelector('#mindmap-modal [data-tab="mm-paste"]').click();
 
-                alert('✅ PDF解析成功！共 ' + pdf.numPages + ' 页');
+                alert('✅ PDF解析成功！共 ' + pdf.numPages + ' 页\n\n即将自动生成AI提示词...');
+
+                // 自动生成AI提示词并跳转到第二步
+                generateMindmapPromptAuto();
             });
 
         }).catch(function(error) {
@@ -218,6 +221,74 @@ function parsePDFFile(file) {
     };
 
     fileReader.readAsArrayBuffer(file);
+}
+
+// 自动生成提示词（不alert，直接跳转）
+function generateMindmapPromptAuto() {
+    const content = document.getElementById('mm-content-input').value.trim();
+
+    if (!content) {
+        alert('⚠️ 请先输入或上传讲义内容');
+        return;
+    }
+
+    const prompt = `请分析以下公文讲义内容，生成结构化的思维导图JSON数据。
+
+要求：
+1. 识别公文文种（如通知、报告、请示、批复、函、纪要等）
+2. 提取每个文种的核心要素，包括：
+   ● 适用场景
+   ● 结构框架
+   ● 写作要点
+   ● 常见错误
+   ● 高分技巧
+3. 返回严格的JSON格式，结构如下：
+{
+  "name": "公文写作",
+  "children": [
+    {
+      "name": "公文文种名称",
+      "children": [
+        {"name": "适用场景", "content": "详细描述..."},
+        {"name": "结构框架", "content": "详细描述..."},
+        {"name": "写作要点", "content": "详细描述..."},
+        {"name": "常见错误", "content": "详细描述..."},
+        {"name": "高分技巧", "content": "详细描述..."}
+      ]
+    }
+  ]
+}
+
+注意：
+- content字段要详细、实用，适合备考背诵
+- 如果是多种公文，每个公文作为一个子节点
+- 只返回JSON，不要有其他文字
+
+讲义内容：
+---
+${content}
+---
+
+请返回JSON数据：`;
+
+    document.getElementById('mm-prompt-output').value = prompt;
+
+    // 切换到步骤2
+    switchMindmapStep(2);
+
+    // 自动复制提示词到剪贴板
+    navigator.clipboard.writeText(prompt).then(() => {
+        alert('✅ 提示词已自动生成，并复制到剪贴板！\n\n请直接粘贴到AI对话框进行分析。');
+    }).catch(() => {
+        // 如果clipboard API失败，使用传统方法
+        const textArea = document.createElement('textarea');
+        textArea.value = prompt;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        alert('✅ 提示词已自动生成，并复制到剪贴板！\n\n请直接粘贴到AI对话框进行分析。');
+    });
 }
 
 function initMindmapButtons() {
